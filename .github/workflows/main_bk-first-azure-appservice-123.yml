@@ -30,7 +30,7 @@ jobs:
       - name: dotnet install ef 
       - run: dotnet tool install -g dotnet-ef --version 7.0.14.
       - name: dotnet bundle migrations 
-      - run: dotnet ef bundle --runtime linux-x64 -p DotNetCoreCosmosDb/DotNetCoreCosmosDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate.
+      - run: dotnet ef bundle --runtime linux-x64 -p DotNetCoreCosmosDb/DotNetCoreCosmosDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
