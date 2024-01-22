@@ -27,8 +27,10 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      
       - name: dotnet install ef 
       - run: dotnet tool install -g dotnet-ef --version 7.0.14.
+
       - name: dotnet bundle migrations 
       - run: dotnet ef bundle --runtime linux-x64 -v DotNetCoreCosmosDb/DotNetCoreCosmosDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
 
